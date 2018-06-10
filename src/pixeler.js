@@ -3,6 +3,7 @@
     var pixelatedCanvas = document.getElementById('pixelated')
     var canvasContext = pixelatedCanvas.getContext('2d')
     var blocks = document.getElementById('blocks')
+    var snap = document.getElementById('snap')
 
     canvasContext.mozImageSmoothingEnabled = false
     canvasContext.webkitImageSmoothingEnabled = false
@@ -40,5 +41,11 @@
 
 
     scanner()
+
+    snap.addEventListener('click', function(){
+        pixelatedCanvas.toBlob(function(blob) {
+            navigator.saveBlob(blob,'pixeler.png')
+        })
+    })
 
 })();
