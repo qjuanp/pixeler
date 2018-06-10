@@ -1,0 +1,12 @@
+section {
+    display: block;
+}
+section.block {
+    width: 50%;
+    margin: 0;
+    float: left;
+}
+
+header, footer {
+    display: block;
+}

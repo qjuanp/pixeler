@@ -12,7 +12,6 @@
     var width = video.width
     var height = video.height
 
-    // Access to camera
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator
             .mediaDevices
@@ -44,7 +43,7 @@
 
     snap.addEventListener('click', function(){
         pixelatedCanvas.toBlob(function(blob) {
-            navigator.saveBlob(blob,'pixeler.png')
+            saveAs(blob,'pixeler.png')
         })
     })
 
